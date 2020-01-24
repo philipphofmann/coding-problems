@@ -13,7 +13,7 @@ class SortedListToBinaryTreeTest {
     }
 
     @Test
-    fun convertWithOneListNode() {
+    fun `one list node`() {
         sortedListNode = SortedListNode(1)
 
         whenConvert()
@@ -22,7 +22,7 @@ class SortedListToBinaryTreeTest {
     }
 
     @Test
-    fun convertWithThreeListNodes() {
+    fun `three list nodes`() {
         givenListNode(listOf(2, 4, 7))
 
         whenConvert()
@@ -31,7 +31,7 @@ class SortedListToBinaryTreeTest {
     }
 
     @Test
-    fun convertWithFiveListNodes() {
+    fun `five list nodes`() {
         givenListNode(listOf(2, 4, 7, 9, 10))
 
         whenConvert()
@@ -46,7 +46,7 @@ class SortedListToBinaryTreeTest {
     }
 
     @Test
-    fun convertWithSevenListNodes() {
+    fun `seven list nodes`() {
         givenListNode(listOf(1, 2, 4, 7, 8, 9, 10))
 
         whenConvert()
