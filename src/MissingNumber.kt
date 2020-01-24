@@ -2,11 +2,16 @@
  * See https://leetcode.com/problems/missing-number/description/
  */
 fun findMissingNumber(numbers: Array<Int>): Int {
+    if (numbers.isEmpty()) return 0
 
-    for (i in numbers.indices) {
-        val number = numbers[i]
-        if (i != 0 && number > numbers[i - 1] + 1) {
-            return number - 1
+    val sortedNumbers = numbers.sortedArray()
+    if (sortedNumbers[0] < 0) {
+        throw IllegalArgumentException("Only positive numbers are allowed.")
+    }
+
+    sortedNumbers.forEachIndexed { index, value ->
+        if (index != value) {
+            return index
         }
     }
 
