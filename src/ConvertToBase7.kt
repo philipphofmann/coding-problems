@@ -5,7 +5,7 @@ fun convertToBase7(decimal: Long): String {
 
     val result = StringBuilder("")
 
-    convertInternal(result, abs(decimal))
+    convertInternal(result, abs(decimal), 7)
 
     return if (decimal < 0) {
         "-$result"
@@ -14,13 +14,11 @@ fun convertToBase7(decimal: Long): String {
     }
 }
 
-private fun convertInternal(result: StringBuilder, decimal: Long) {
-    val base = 7
-
+private fun convertInternal(result: StringBuilder, decimal: Long, base: Int) {
     val next = floor(decimal.div(base).toDouble()).toLong()
 
     if (next > 0) {
-        convertInternal(result, next)
+        convertInternal(result, next, base)
     }
 
     result.append(decimal.rem(base))
