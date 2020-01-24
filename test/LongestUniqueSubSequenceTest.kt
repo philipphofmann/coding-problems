@@ -1,7 +1,7 @@
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class LongestSubstringTest {
+class LongestUniqueSubSequenceTest {
 
     @Test
     fun `length of two`() {
@@ -34,6 +34,6 @@ class LongestSubstringTest {
     }
 
     private fun testWith(expected: String, value: String) {
-        assertEquals(expected, longestSubstring(value))
+        assertEquals(expected, longestUniqueSubSequence(value))
     }
 }

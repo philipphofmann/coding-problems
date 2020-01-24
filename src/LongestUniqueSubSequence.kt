@@ -1,7 +1,7 @@
 /**
  * Returns the longest substring without repeating character.
  */
-fun longestSubstring(value: String): String {
+fun longestUniqueSubSequence(value: String): String {
     var longest = ""
     value.forEachIndexed { index, _ ->
         val nonRepeating = longestNonRepeating(value.subSequence(index, value.length))
