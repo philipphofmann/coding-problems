@@ -1,3 +1,8 @@
+/**
+ * Returns the words and lines of this char sequence.
+ *
+ * @return Pair for the words and lines. The first Int is the amount of words, the second is the amount of lines.
+ */
 fun String.wordsAndLines(): Pair<Int, Int> {
     if (this.isEmpty()) {
         return Pair(0, 1)
