@@ -4,16 +4,36 @@ import kotlin.test.assertEquals
 class LongestSubstringTest {
 
     @Test
-    fun subStringWithLengthFour() {
-        val actual = longestSubstring("abcabd")
-
-        assertEquals("cabd", actual)
+    fun `length of two`() {
+        testWith("ac", "aac")
     }
 
     @Test
-    fun allSameCharacters() {
-        val actual = longestSubstring("bbbbbb")
+    fun `empty string`() {
+        testWith("", "")
+    }
 
-        assertEquals("b", actual)
+    @Test
+    fun `length of four`() {
+        testWith("cabd", "abcabd")
+    }
+
+    @Test
+    fun `all repeating except middle`() {
+        testWith("abhic", "aaaaabhicaaaaaa")
+    }
+
+    @Test
+    fun `all characters are the same`() {
+        testWith("b", "bbbb")
+    }
+
+    @Test
+    fun `with whitespaces and symbols`() {
+        testWith("abcd0? \nni", "abcdabcd0? \nnia")
+    }
+
+    private fun testWith(expected: String, value: String) {
+        assertEquals(expected, longestSubstring(value))
     }
 }
