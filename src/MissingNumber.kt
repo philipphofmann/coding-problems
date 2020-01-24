@@ -10,10 +10,8 @@ fun findMissingNumber(numbers: Array<Int>): Int {
     }
 
     sortedNumbers.forEachIndexed { index, value ->
-        if (index != value) {
-            return index
-        }
+        if (index != value) return index
     }
 
-    return 0
+    return -1
 }

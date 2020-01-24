@@ -30,6 +30,11 @@ class MissingNumberTest {
     }
 
     @Test
+    fun `no missing number`() {
+        testWith(-1, arrayOf(0, 1, 2, 3))
+    }
+
+    @Test
     fun `negative number`() {
         assertFailsWith(IllegalArgumentException::class) {
             findMissingNumber(arrayOf(0, 1, 2, 3, -1))
