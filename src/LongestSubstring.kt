@@ -1,23 +1,21 @@
 /**
- * Longest substring without repeating character.
+ * Returns the longest substring without repeating character.
  */
-object LongestSubstring {
-    fun subString(s: String): String {
+fun longestSubstring(value: String): String {
 
-        val subStrings = ArrayList<ByteArray>(s.length)
+    val subStrings = ArrayList<ByteArray>(value.length)
 
-        s.toCharArray().forEachIndexed { i, char ->
+    value.toCharArray().forEachIndexed { i, char ->
 
-            (0..i).forEach {
-                val indexArray = subStrings[it]
-                indexArray.getOrNull(char.toInt())
+        (0..i).forEach {
+            val indexArray = subStrings[it]
+            indexArray.getOrNull(char.toInt())
 
-                indexArray.size
+            indexArray.size
 
-                subStrings[it][char.toInt()] = 0
-            }
+            subStrings[it][char.toInt()] = 0
         }
-
-        return s
     }
+
+    return value
 }

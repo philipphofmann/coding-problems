@@ -5,14 +5,14 @@ class LongestSubstringTest {
 
     @Test
     fun subStringWithLengthFour() {
-        val actual = LongestSubstring.subString("abcabd")
+        val actual = longestSubstring("abcabd")
 
         assertEquals("cabd", actual)
     }
 
     @Test
     fun allSameCharacters() {
-        val actual = LongestSubstring.subString("bbbbbb")
+        val actual = longestSubstring("bbbbbb")
 
         assertEquals("b", actual)
     }
