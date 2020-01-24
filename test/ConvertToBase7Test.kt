@@ -3,91 +3,34 @@ import kotlin.test.assertEquals
 
 class ConvertToBase7Test {
 
-    private var decimal: Long = 0
-    private var actual: String = ""
-
     @Test
-    fun convert_7() {
-        givenDecimal(6)
-
-        whenConvertToBase7()
-
-        thenShouldBe("6")
+    fun `one below base`() {
+        testWith("6", 6)
     }
 
     @Test
-    fun convert_8() {
-        givenDecimal(8)
+    fun `with base and negative`() = testWith("-10", -7)
 
-        whenConvertToBase7()
-
-        thenShouldBe("11")
+    @Test
+    fun `double base`() {
+        testWith("20", 14)
     }
 
     @Test
-    fun convert_14() {
-        givenDecimal(14)
-
-        whenConvertToBase7()
-
-        thenShouldBe("20")
+    fun `triple base`() {
+        testWith("-100", -49)
     }
 
     @Test
-    fun convert_49() {
-        givenDecimal(49)
-
-        whenConvertToBase7()
-
-        thenShouldBe("100")
+    fun `with 1000`() {
+        testWith("2626", 1000)
     }
 
     @Test
-    fun convert_1000() {
-        givenDecimal(1000)
-
-        whenConvertToBase7()
-
-        thenShouldBe("2626")
+    fun `large number`() {
+        testWith("356165433503645021", 893879234523248)
     }
 
-    @Test
-    fun convert_100() {
-        givenDecimal(100)
+    private fun testWith(expected: String, value: Long) = assertEquals(expected, convertToBase7(value))
 
-        whenConvertToBase7()
-
-        thenShouldBe("202")
-    }
-
-    @Test
-    fun convert_893879234523245978() {
-        givenDecimal(893879234523248)
-
-        whenConvertToBase7()
-
-        thenShouldBe("356165433503645021")
-    }
-
-    @Test
-    fun convert_Minus7() {
-        givenDecimal(-7)
-
-        whenConvertToBase7()
-
-        thenShouldBe("-10")
-    }
-
-
-    private fun givenDecimal(decimal: Long) {
-        this.decimal = decimal
-    }
-
-    private fun whenConvertToBase7() {
-        actual = convertToBase7(decimal)
-    }
-
-    private fun thenShouldBe(expected: String) {
-        assertEquals(expected, actual)
-    }
 }
