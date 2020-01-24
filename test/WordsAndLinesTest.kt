@@ -4,42 +4,42 @@ import kotlin.test.assertEquals
 class WordsAndLinesTest {
 
     @Test
-    fun emptyString() {
+    fun `empty String`() {
         assertEquals(Pair(0, 1), "".wordsAndLines())
     }
 
     @Test
-    fun oneWord() {
+    fun `one word`() {
         assertEquals(Pair(1, 1), "hello".wordsAndLines())
     }
 
     @Test
-    fun oneWordFirstIsWhitespace() {
+    fun `one word first character is whitespace`() {
         assertEquals(Pair(1, 1), " hello".wordsAndLines())
     }
 
     @Test
-    fun twoWords() {
+    fun `two words`() {
         assertEquals(Pair(2, 1), "hello world".wordsAndLines())
     }
 
     @Test
-    fun threeWordsWithWhitespaceAtEnd() {
+    fun `three words with whitespace at the end`() {
         assertEquals(Pair(3, 1), "hello world! how ".wordsAndLines())
     }
 
     @Test
-    fun threeWordsWithMultipleSpacingAndWhitespaceAtEnd() {
+    fun `three words with multiple spacing and whitespace at the end`() {
         assertEquals(Pair(3, 1), "hello      world!  how  ".wordsAndLines())
     }
 
     @Test
-    fun twoWordsAndTwoLines() {
+    fun `two words and two lines`() {
         assertEquals(Pair(2, 2), "Hello\nWorld!".wordsAndLines())
     }
 
     @Test
-    fun fourWordsAndTwoLines() {
+    fun `four words and two lines`() {
         assertEquals(
             Pair(4, 2),
             " Hello\nhello      world!  how  ".wordsAndLines()
@@ -47,17 +47,17 @@ class WordsAndLinesTest {
     }
 
     @Test
-    fun onlyOneNewLine() {
+    fun `only one new Line`() {
         assertEquals(Pair(0, 2), "\n".wordsAndLines())
     }
 
     @Test
-    fun onlyNewLines() {
+    fun `only new lines`() {
         assertEquals(Pair(0, 4), "\n\n\n".wordsAndLines())
     }
 
     @Test
-    fun oneWordWithNewLines() {
+    fun `one word with new lines`() {
         assertEquals(Pair(1, 4), "\r\n a \n\n".wordsAndLines())
     }
 }
