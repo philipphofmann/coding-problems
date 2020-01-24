@@ -1,28 +1,27 @@
 /**
- * Returns the longest substring without repeating character.
+ * Returns the longest subsequence with unique character.
  */
 fun longestUniqueSubSequence(value: String): String {
-    var longest = ""
+    var longestUniqueSubSequence = ""
     value.forEachIndexed { index, _ ->
-        val nonRepeating = longestNonRepeating(value.subSequence(index, value.length))
-
-        if (longest.length < nonRepeating.length) {
-            longest = nonRepeating
+        val uniqueSubsequence = uniqueSubSequence(value.subSequence(index, value.length))
+        if (longestUniqueSubSequence.length < uniqueSubsequence.length) {
+            longestUniqueSubSequence = uniqueSubsequence
         }
     }
 
-    return longest
+    return longestUniqueSubSequence
 }
 
-private fun longestNonRepeating(subSequence: CharSequence): String {
-    var longestString = ""
-    subSequence.forEach { char ->
-        if (!longestString.contains(char)) {
-            longestString += char
+private fun uniqueSubSequence(sequence: CharSequence): String {
+    var uniqueSubSequence = ""
+    sequence.forEach { char ->
+        if (!uniqueSubSequence.contains(char)) {
+            uniqueSubSequence += char
         } else {
-            return longestString
+            return uniqueSubSequence
         }
     }
 
-    return longestString
+    return uniqueSubSequence
 }
