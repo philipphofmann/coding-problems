@@ -1,29 +1,27 @@
+import kotlin.math.abs
 import kotlin.math.floor
 
-object ConvertToBase7 {
+fun convertToBase7(decimal: Long): String {
 
-    private const val base = 7
+    val result = StringBuilder("")
 
-    fun convert(decimal: Long): String {
+    convertInternal(result, abs(decimal))
 
-        val result = StringBuilder("")
+    return if (decimal < 0) {
+        "-$result"
+    } else {
+        result.toString()
+    }
+}
 
-        convertInternal(result, Math.abs(decimal))
+private fun convertInternal(result: StringBuilder, decimal: Long) {
+    val base = 7
 
-        return if (decimal < 0) {
-            "-$result"
-        } else {
-            result.toString()
-        }
+    val next = floor(decimal.div(base).toDouble()).toLong()
+
+    if (next > 0) {
+        convertInternal(result, next)
     }
 
-    private fun convertInternal(result: StringBuilder, decimal: Long) {
-        val next = floor(decimal.div(base).toDouble()).toLong()
-
-        if (next > 0) {
-            convertInternal(result, next)
-        }
-
-        result.append(decimal.rem(base))
-    }
+    result.append(decimal.rem(base))
 }

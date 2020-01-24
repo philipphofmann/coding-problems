@@ -84,7 +84,7 @@ internal class ConvertToBase7Test {
     }
 
     private fun whenConvertToBase7() {
-        actual = ConvertToBase7.convert(decimal)
+        actual = convertToBase7(decimal)
     }
 
     private fun thenShouldBe(expected: String) {
