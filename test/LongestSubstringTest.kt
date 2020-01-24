@@ -1,8 +1,7 @@
-import org.junit.Test
+import kotlin.test.Test
 import kotlin.test.assertEquals
 
-internal class LongestSubstringTest {
-
+class LongestSubstringTest {
 
     @Test
     fun subStringWithLengthFour() {

@@ -1,5 +1,5 @@
-import org.junit.Before
-import org.junit.Test
+import kotlin.test.BeforeTest
+import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class SortedListToBinaryTreeTest {
@@ -7,7 +7,7 @@ class SortedListToBinaryTreeTest {
     private lateinit var sortedListNode: SortedListNode
     private lateinit var actual: BinaryTreeNode
 
-    @Before
+    @BeforeTest
     fun before() {
         sortedListNode = SortedListNode(0)
     }

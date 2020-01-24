@@ -1,7 +1,7 @@
-import org.junit.Test
+import kotlin.test.Test
 import kotlin.test.assertEquals
 
-internal class ConvertToBase7Test {
+class ConvertToBase7Test {
 
     private var decimal: Long = 0
     private var actual: String = ""
