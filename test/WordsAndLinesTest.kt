@@ -1,7 +1,7 @@
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class StringsPhTest {
+class WordsAndLinesTest {
 
     @Test
     fun emptyString() {
