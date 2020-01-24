@@ -1,32 +1,32 @@
 import org.junit.Test
 import kotlin.test.assertEquals
 
-internal class ReverseIntegerTest {
+internal class ReversedIntTest {
 
     @Test
     fun `two digits`() {
-        val actual = ReverseInteger.reverse(12)
+        val actual = 12.reversed()
 
         assertEquals(21, actual)
     }
 
     @Test
     fun `two negative digits`() {
-        val actual = ReverseInteger.reverse(-12)
+        val actual = (-12).reversed()
 
         assertEquals(-21, actual)
     }
 
     @Test
     fun `ten negative digits`() {
-        val actual = ReverseInteger.reverse(-123898274)
+        val actual = (-123898274).reversed()
 
         assertEquals(-472898321, actual)
     }
 
     @Test
     fun `bigger than Int Max value`() {
-        val actual = ReverseInteger.reverse(1238982742)
+        val actual = 1238982742.reversed()
 
         assertEquals(0, actual)
     }
