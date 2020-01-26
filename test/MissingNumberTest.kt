@@ -5,34 +5,28 @@ import kotlin.test.assertFailsWith
 class MissingNumberTest {
 
     @Test
-    fun `three digits second number is missing`() {
+    fun `three digits second number is missing`() =
         testWith(2, arrayOf(3, 0, 1))
-    }
 
     @Test
-    fun `five digits 5th number is missing`() {
+    fun `five digits 5th number is missing`() =
         testWith(4, arrayOf(0, 1, 2, 3, 5))
-    }
 
     @Test
-    fun `not sorted array`() {
+    fun `not sorted array`() =
         testWith(8, arrayOf(9, 6, 4, 2, 3, 5, 7, 0, 1))
-    }
 
     @Test
-    fun `empty array`() {
+    fun `empty array`() =
         testWith(0, emptyArray())
-    }
 
     @Test
-    fun `array with one element`() {
+    fun `array with one element`() =
         testWith(0, arrayOf(10))
-    }
 
     @Test
-    fun `no missing number`() {
+    fun `no missing number`() =
         testWith(-1, arrayOf(0, 1, 2, 3))
-    }
 
     @Test
     fun `negative number`() {
